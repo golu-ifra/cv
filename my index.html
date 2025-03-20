@@ -98,78 +98,136 @@
             color: #000;
             font-weight: bold;
         }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .header-content {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .contact-info {
+                text-align: center;
+                margin-top: 10px;
+            }
+            .awards {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                font-size: 24px;
+            }
+            .header img {
+                width: 60px;
+                height: 60px;
+            }
+            .contact-info {
+                font-size: 12px;
+            }
+            .section-title {
+                font-size: 14px;
+            }
+            .skill-item, .language-item {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+        }
     </style>
     <!-- Updated FontAwesome Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container" itemscope itemtype="https://schema.org/Person">
         <div class="header">
             <div class="header-content">
-                <img src="muslim-girl-wearing-hijab-illustration-vector.jpg" alt="Profile Picture">
+                <img src="muslim-girl-wearing-hijab-illustration-vector.jpg" alt="Profile Picture" itemprop="image">
                 <div>
-                    Ifra Mariam <br>
-                    <span class="job-intention">Job intention: Designer</span>
+                    <span itemprop="name">Ifra Mariam</span> <br>
+                    <span class="job-intention" itemprop="jobTitle">Job intention: Designer</span>
                 </div>
             </div>
             <div class="contact-info">
-                <i class="fa-solid fa-location-dot"></i> Sargodha, Pakistan<br>
-                <i class="fa-solid fa-phone"></i> +92 3407526757<br>
-                <i class="fa-solid fa-envelope"></i> ifra1234@gmail.com
+                <i class="fa-solid fa-location-dot"></i> 
+                <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                    <span itemprop="addressLocality">Sargodha, Pakistan</span>
+                </span><br>
+                <i class="fa-solid fa-phone"></i> 
+                <span itemprop="telephone">+92 3407526757</span><br>
+                <i class="fa-solid fa-envelope"></i> 
+                <span itemprop="email">ifra1234@gmail.com</span>
             </div>
         </div>
 
         <div class="left-section">
             <div class="section-title">Personal Resume</div>
-            <p>Innovative designer skilled in visual design, branding, and UI/UX. Proficient in Adobe Photoshop, Illustrator, and Figma, delivering impactful and user-centric designs.</p>
+            <p itemprop="description">Innovative designer skilled in visual design, branding, and UI/UX. Proficient in Adobe Photoshop, Illustrator, and Figma, delivering impactful and user-centric designs.</p>
             
             <div class="section-title">Language</div>
             <div class="language">
-                <span class="language-item">English</span>
-                <span class="language-item">Urdu</span>
-                <span class="language-item">German</span>
+                <span class="language-item" itemprop="knowsLanguage">English</span>
+                <span class="language-item" itemprop="knowsLanguage">Urdu</span>
+                <span class="language-item" itemprop="knowsLanguage">German</span>
             </div>
 
             <div class="section-title">Skill</div>
             <div class="skills">
-                <span class="skill-item">Graphic Design</span>
-                <span class="skill-item">UI/UX Design</span>
-                <span class="skill-item">Web Design</span>
-                <span class="skill-item">Adobe Photoshop</span>
-                <span class="skill-item">Adobe Illustrator</span>
-                <span class="skill-item">Figma</span>
+                <span class="skill-item" itemprop="skills">Graphic Design</span>
+                <span class="skill-item" itemprop="skills">UI/UX Design</span>
+                <span class="skill-item" itemprop="skills">Web Design</span>
+                <span class="skill-item" itemprop="skills">Adobe Photoshop</span>
+                <span class="skill-item" itemprop="skills">Adobe Illustrator</span>
+                <span class="skill-item" itemprop="skills">Figma</span>
             </div>
         </div>
 
         <div class="right-section">
             <div class="section-title">Education</div>
-            <p><b>Punjab College Sargodha</b></p>
-            <p>2019-2021</p>
-            <p>Fsc Pre Engineering</p>
-            <p><b>University Of Sargodha</b></p>
-            <p>2021-2025</p>
-            <p>Bachelor Of Computer Science</p>
+            <div itemprop="alumniOf" itemscope itemtype="https://schema.org/EducationalOrganization">
+                <p><b itemprop="name">Punjab College Sargodha</b></p>
+                <p>2019-2021</p>
+                <p itemprop="description">Fsc Pre Engineering</p>
+            </div>
+            <div itemprop="alumniOf" itemscope itemtype="https://schema.org/EducationalOrganization">
+                <p><b itemprop="name">University Of Sargodha</b></p>
+                <p>2021-2025</p>
+                <p itemprop="description">Bachelor Of Computer Science</p>
+            </div>
 
             <div class="section-title">Work Experience</div>
-            <p><strong>Graphic Designer</strong><br>
-                Creative Studio, Sargodha — Jan 2025 - Present</p>
-            <p>Designed visuals for social media, posters, and campaigns. Worked closely with clients to meet creative goals.</p>
+            <div itemprop="worksFor" itemscope itemtype="https://schema.org/Organization">
+                <p><strong itemprop="jobTitle">Graphic Designer</strong><br>
+                    <span itemprop="name">Creative Studio</span>, Sargodha — Jan 2025 - Present</p>
+                <p itemprop="description">Designed visuals for social media, posters, and campaigns. Worked closely with clients to meet creative goals.</p>
+            </div>
 
-            <p><strong>Junior Graphic Designer</strong><br>
-                Pixel Creatives, Sargodha — Mar 2024 - Dec 2024</p>
-            <p>Developed branding materials like logos, banners, and cards. Assisted in creating website layouts.</p>
+            <div itemprop="worksFor" itemscope itemtype="https://schema.org/Organization">
+                <p><strong itemprop="jobTitle">Junior Graphic Designer</strong><br>
+                    <span itemprop="name">Pixel Creatives</span>, Sargodha — Mar 2024 - Dec 2024</p>
+                <p itemprop="description">Developed branding materials like logos, banners, and cards. Assisted in creating website layouts.</p>
+            </div>
 
-            <p><strong>Freelance Graphic Designer</strong><br>
-                Remote (Sargodha-Based) — Jun 2023 - Dec 2023</p>
-            <p>Created content for local businesses to improve their online presence. Designed custom graphics for ads and social media.</p>
+            <div itemprop="worksFor" itemscope itemtype="https://schema.org/Organization">
+                <p><strong itemprop="jobTitle">Freelance Graphic Designer</strong><br>
+                    Remote (Sargodha-Based) — Jun 2023 - Dec 2023</p>
+                <p itemprop="description">Created content for local businesses to improve their online presence. Designed custom graphics for ads and social media.</p>
+            </div>
         </div>
 
         <div class="section-title">Awards</div>
         <div class="awards">
-            <div style="background-color: #87CEEB; color: #fff; padding: 10px; border-radius: 8px; flex: 1; text-align: center;">Best Graphic Design Award</div>
-            <div style="background-color: #87CEEB; color: #fff; padding: 10px; border-radius: 8px; flex: 1; text-align: center;">Creative Excellence Award</div>
-            <div style="background-color: #87CEEB; color: #fff; padding: 10px; border-radius: 8px; flex: 1; text-align: center;">Outstanding Visual Design Award</div>
-            <div style="background-color: #87CEEB; color: #fff; padding: 10px; border-radius: 8px; flex: 1; text-align: center;">Best UI/UX Design Award</div>
+            <div itemprop="award">Best Graphic Design Award</div>
+            <div itemprop="award">Creative Excellence Award</div>
+            <div itemprop="award">Outstanding Visual Design Award</div>
+            <div itemprop="award">Best UI/UX Design Award</div>
         </div>
     </div>
 </body>
